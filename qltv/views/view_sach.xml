@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="chung_loai_sach_form" model="ir.ui.view">
+            <field name="name">Chủng loại</field>
+            <field name="model">chung.loai.sach</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ma" required="True" placeholder="Nhập mã"/>
+                            <field name="name" required="True" placeholder="Nhập mã"/>
+                            <field name="ghi_chu"/>
+                            <field name="nhom_sach_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="chung_loai_sach_tree" model="ir.ui.view">
+            <field name="name">Chủng loại</field>
+            <field name="model">chung.loai.sach</field>
+            <field name="arch" type="xml">
+                <tree>
+                     <field name="ma" optional="show"/>
+                     <field name="name" optional="show"/>
+                     <field name="ghi_chu" optional="show"/>
+                     <field name="nhom_sach_id" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_chung_loai_sach" model="ir.actions.act_window">
+            <field name="name">Chủng loại sách</field>
+            <field name="view_mode">tree,form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">chung.loai.sach</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem id="menu_qltv_root"
+                  name="Quản lý thư viện"
+                  />
+
+        <menuitem id="menu_danh_muc_chung"
+                  name="Danh mục chung"
+                  parent="menu_qltv_root"/>
+
+        <menuitem id="menu_chung_loai_sach"
+                  parent="menu_danh_muc_chung"
+                  name="Chủng loại sách"
+                  action="open_chung_loai_sach"/>
+
+        <menuitem id="menu_danh_muc_nhom"
+                  parent="menu_danh_muc_chung"
+                  name="Danh mục nhóm"
+                  />
+
+        <menuitem id="menu_danh_muc_con_nhom"
+                  parent="menu_danh_muc_nhom"
+                  name="Danh mục con"
+                  action="open_chung_loai_sach"/>
+
+    </data>
+</odoo>

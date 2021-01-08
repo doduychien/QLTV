@@ -12,6 +12,11 @@
     'data': [
         'security/ir.model.access.csv',
         'views/view_sach.xml',
+        'views/view_danh_muc_sach.xml',
+        'views/view_nhom_sach.xml',
+        'views/muon_sach_view.xml',
+        'report/muon_sach.xml',
+        'report/temp_muon_sach.xml',
     ],
     'installable': True,
     'application': True,

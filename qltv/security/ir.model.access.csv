@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 internal_user_all_perm,Internal user all perm,model_chung_loai_sach,base.group_user,1,1,1,1
+internal_user_all_perm_nhom_sach,Internal user all perm nhom sach,model_nhom_sach,base.group_user,1,1,1,1
+internal_user_all_perm_danh_muc_sach,Internal user all perm danh mục sách,model_danh_muc_sach,base.group_user,1,1,1,1
+internal_user_all_perm_muon_sach,Internal user all perm mượn sách,model_muon_sach,base.group_user,1,1,1,1

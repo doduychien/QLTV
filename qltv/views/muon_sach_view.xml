@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="muon_sach_form" model="ir.ui.view">
+            <field name="name">Mượn sách</field>
+            <field name="model">muon.sach</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="True"/>
+                            <field name="partner_id" required="True"/>
+                            <field name="phone"/>
+                            <field name="sach_id" options='{"no_open":True,"no_create":True}' required="True"/>
+                            <field name="so_luong_muon" required="True"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="muon_sach_tree" model="ir.ui.view">
+            <field name="name">Mượn sách</field>
+            <field name="model">muon.sach</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" optional="show"/>
+                    <field name="partner_id" optional="show"/>
+                    <field name="sach_id" optional="show"/>
+                    <field name="so_luong_muon" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_muon_sach" model="ir.actions.act_window">
+            <field name="name">Mượn sách</field>
+            <field name="view_mode">tree,form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">muon.sach</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem id="menu_qltv_muon_sach"
+                  name="Mượn sách"
+                  action="open_muon_sach"
+                  parent="menu_qltv_root"
+                  sequence="0"
+                  />
+
+    </data>
+</odoo>

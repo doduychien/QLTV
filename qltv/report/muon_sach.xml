@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report
+        id="report_muon_sach"
+        model="muon.sach"
+        string="In thẻ mượn sách"
+        report_type="qweb-pdf"
+        name="qltv.report_muon_sach_temp"
+        file="qltv.the_muon_sach"
+    />
+</odoo>

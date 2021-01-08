@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="danh_muc_sach_form" model="ir.ui.view">
+            <field name="name">Danh mục sách</field>
+            <field name="model">danh.muc.sach</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ma" required="True" placeholder="Nhập mã sách"/>
+                            <field name="name" required="True" placeholder="Nhập tên sách"/>
+                            <field name="nhom_sach_id" required="True" options='{"no_open":True,"no_create":True}'/>
+                            <field name="chung_loai_id"
+                                   options='{"no_open":True,"no_create":True}' required="True"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                        <group>
+                            <field name="so_luong_ban_dau" required="True"/>
+                            <field name="so_luong_thuc_te"/>
+                            <field name="so_luong_da_cho_muon"/>
+                        </group>
+                        <notebook>
+                            <page string="Mượn sách">
+                                <field name="muon_sach_ids">
+                                    <tree create="false">
+                                        <field name="partner_id"/>
+                                        <field name="name"/>
+                                        <field name="sach_id"/>
+                                        <field name="so_luong_muon"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="danh_muc_sach_tree" model="ir.ui.view">
+            <field name="name">Danh mục sách</field>
+            <field name="model">danh.muc.sach</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="nhom_sach_id" optional="show"/>
+                    <field name="chung_loai_id" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_danh_muc_sach" model="ir.actions.act_window">
+            <field name="name">Danh mục sách</field>
+            <field name="view_mode">tree,form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">danh.muc.sach</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem id="menu_qltv_danh_mục_sach"
+                  name="Danh mục sách"
+                  action="open_danh_muc_sach"
+                  parent="menu_qltv_root"
+                  sequence="2"
+                  />
+
+    </data>
+</odoo>

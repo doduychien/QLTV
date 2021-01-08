@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="nhom_sach_form" model="ir.ui.view">
+            <field name="name">Nhóm sách</field>
+            <field name="model">nhom.sach</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ma" required="True" placeholder="Nhập mã nhóm"/>
+                            <field name="name" required="True" placeholder="Nhập tên nhóm"/>
+                            <field name="chung_loai_ids" widget="many2many_tags"
+                                   options='{"no_open":True,"no_create":True}'/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="nhom_sach_tree" model="ir.ui.view">
+            <field name="name">Nhóm sách</field>
+            <field name="model">nhom.sach</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma" optional="show"/>
+                    <field name="name" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_nhom_sach" model="ir.actions.act_window">
+            <field name="name">Nhóm sách</field>
+            <field name="view_mode">tree,form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">nhom.sach</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem id="menu_qltv_nhom_sach"
+                  name="Nhóm sách"
+                  action="open_nhom_sach"
+                  parent="menu_danh_muc_chung"
+                  />
+
+    </data>
+</odoo>

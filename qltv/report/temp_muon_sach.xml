@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_muon_sach_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2>Thẻ mượn sách</h2>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_muon_sach_temp">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report_muon_sach_card"/>
+            </t>
+        </t>
+    </template>
+
+
+
+</odoo>

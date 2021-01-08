@@ -9,7 +9,7 @@
                     <sheet>
                         <group>
                             <field name="ma" required="True" placeholder="Nhập mã"/>
-                            <field name="name" required="True" placeholder="Nhập mã"/>
+                            <field name="name" required="True" placeholder="Nhập tên"/>
                             <field name="ghi_chu"/>
                             <field name="nhom_sach_id"/>
                         </group>
@@ -41,11 +41,14 @@
 
         <menuitem id="menu_qltv_root"
                   name="Quản lý thư viện"
+                  web_icon="qltv,static/icon_3.png"
                   />
 
         <menuitem id="menu_danh_muc_chung"
                   name="Danh mục chung"
-                  parent="menu_qltv_root"/>
+                  parent="menu_qltv_root"
+                  sequence="4"
+        />
 
         <menuitem id="menu_chung_loai_sach"
                   parent="menu_danh_muc_chung"

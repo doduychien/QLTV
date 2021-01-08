@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sach_page" name="Danh muc sách">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <br/>
+                    <center>
+                        <h3>Danh mục sách</h3>
+                    </center>
+                    <br/>
+                    <table class="table-striped table">
+                        <thead style="font-size: 23px;">
+                            <tr>
+                                <h6>
+                                    <b>
+                                        <th>Tên sách</th>
+                                        <th>Nhóm sách</th>
+                                        <th>Chủng loại sách</th>
+                                    </b>
+                                </h6>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="ms" t-as="sach">
+                                <tr>
+                                    <td>
+                                        <span t-esc="sach.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="sach.nhom_sach_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="sach.chung_loai_id.name"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

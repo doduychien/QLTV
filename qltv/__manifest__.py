@@ -17,6 +17,7 @@
         'views/muon_sach_view.xml',
         'report/muon_sach.xml',
         'report/temp_muon_sach.xml',
+        'views/sach_page.xml',
     ],
     'installable': True,
     'application': True,

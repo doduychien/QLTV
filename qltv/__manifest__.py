@@ -7,6 +7,7 @@
     'summary': '',
     'depends': [
         'base',
+        'report_xlsx',
 
     ],
     'data': [
@@ -18,6 +19,7 @@
         'report/muon_sach.xml',
         'report/temp_muon_sach.xml',
         'views/sach_page.xml',
+        'report/report_excel.xml',
     ],
     'installable': True,
     'application': True,

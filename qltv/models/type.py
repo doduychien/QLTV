@@ -72,5 +72,5 @@ class MuonSach(models.Model):
     @api.constrains('so_luong_muon')
     def check_so_luong_muon(self):
         for rec in self:
-            if rec.sach_id and rec.so_luong_muon > rec.sach_id.so_luong_thuc_te:
+            if rec.sach_id and rec.so_luong_muon >= rec.sach_id.so_luong_thuc_te:
                 raise ValidationError('Số lượng thực tế không đủ để đáp ứng !!!')

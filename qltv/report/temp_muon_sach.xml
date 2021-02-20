@@ -9,6 +9,8 @@
                 <h2>Test print</h2>
                 <t t-esc="doc.partner_id.name"/>
                 <t t-esc="doc.phone"/>
+                <t t-esc="doc.sach_id.name"/>
+                <t t-esc="doc.so_luong_muon"/>
             </t>
 <!--        </t>-->
         </t>
